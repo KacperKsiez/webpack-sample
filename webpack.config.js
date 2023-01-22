@@ -6,7 +6,7 @@ const { resolve } = require("path");
 
 module.exports = {
 	entry: {
-		app: "./src/scripts/app.js",
+		app: "./src/index.js",
 	},
 	output: {
 		path: resolve(__dirname, "./dist"),
@@ -84,10 +84,10 @@ module.exports = {
 			template: "./src/index.html",
 			filename: "./index.html", //relative to root of the application
 		}),
-		// new HtmlWebpackPlugin({
-		// 	filename: "./html/contact.html",
-		// 	template: "./src/html/contact.html",
-		// }),
+		new HtmlWebpackPlugin({ // TUTAJ DODAJEMY PODSTRONY
+			template: "./src/html/contact.html", // INPUT
+			filename: "./html/contact.html",  // OUTPUT //relative to root of the application
+		}),
 	],
 	devServer: {
 		static: {
